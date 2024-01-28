@@ -1,21 +1,8 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
-
-/*
-Info that I need to pull from the user:
-- Project Title
-- Description
-- Table of Contents
-- Installation
-- Usage information
-- License
-- Contributing
-- Tests
-- Questions
-*/
+const fs = require('fs'); //Imports inquirer and fs packages
 
 inquirer
-  .prompt([
+  .prompt([ //Prompts user for all the necessary information to generate a README about their project
     {
       type: 'input',
       name: 'projectTitle',
@@ -78,12 +65,15 @@ const generateMarkdown = (data) => {
     const contributing = data.contributing.trim();
     const test = data.test.trim();
     const github = data.github.trim();
-    const email = data.email.trim();
+    const email = data.email.trim(); 
+    //Assigns all the user's input to easier variables
+    //Trim removes any extra spaces to prevent empty variables from being truthy
 
 
-    fs.writeFile(`README.md`, (`# ${title}\n\n`), (err) =>err ? console.log(err) : console.log('Created file!'));
+    fs.writeFile(`README.md`, (`# ${title}\n\n`), (err) =>err ? console.log(err) : console.log('Created file!')); //Creates the README file and adds the title
+
     if (license !== 'None') {
-        fs.appendFile(`README.md`, `${generateLicense(license, true)}\n\n`, (err) => err ? console.log(err) : console.log('Added badge!'));
+        fs.appendFile(`README.md`, `${generateLicense(license, true)}\n\n`, (err) => err ? console.log(err) : console.log('Added badge!')); //Adds badge to the beginning
     }
     fs.appendFile(`README.md`, `## Description\n${desc}\n\n`, (err) =>
         err ? console.log(err) : console.log('Added description!')
@@ -123,7 +113,7 @@ const generateMarkdown = (data) => {
         }
         fs.appendFile('README.md', `\n\n`, (err) => 
             err ? console.log(err) : console.log('Success!')
-        );
+        ); //If statements ensure that links aren't created for sections that don't exist
     if (installation) {
         fs.appendFile(`README.md`, `## Installation\n${installation}\n\n`, (err) =>
             err ? console.log(err) : console.log('Added installation!')
@@ -160,7 +150,7 @@ const generateMarkdown = (data) => {
     };
 }
 
-const generateLicense = (license, badge) => {
+const generateLicense = (license, badge) => { //This function generates the license name or badge depending on the option selected.
     switch (license) {
         case 'MIT':
             return badge ? `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)` : `MIT License`;
