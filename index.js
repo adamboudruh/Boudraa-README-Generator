@@ -88,45 +88,42 @@ const generateMarkdown = (data) => {
     fs.appendFile(`README.md`, `## Description\n${desc}\n\n`, (err) =>
         err ? console.log(err) : console.log('Added description!')
     );
-    fs.appendFile(`README.md`, `## Table of Contents\n`, (err) => {
-            err ? console.log(err) : console.log('Added table of contents!');
-            
-            if(installation) {
-                fs.appendFile(`README.md`, `- [Installation](#installation)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            if(usageInfo) {
-                fs.appendFile(`README.md`, `- [Usage](#usage)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            if(license !== 'None') {
-                fs.appendFile(`README.md`, `- [License](#license)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            if(data.contributing.trim()) {
-                fs.appendFile(`README.md`, `- [Contributing](#contributing)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            if(data.test.trim()) {
-                fs.appendFile(`README.md`, `- [Tests](#tests)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            if(data.github.trim() || data.email.trim()) {
-                fs.appendFile(`README.md`, `- [Questions](#questions)\n`, (err) =>
-                    err ? console.log(err) : console.log('Success!')
-                );
-            }
-            fs.appendFile('README.md', `\n\n`, (err) => 
+    fs.appendFile(`README.md`, `## Table of Contents\n`, (err) =>  
+        err ? console.log(err) : console.log('Added table of contents!')
+    );
+        if(installation) {
+            fs.appendFile(`README.md`, `- [Installation](#installation)\n`, (err) =>
                 err ? console.log(err) : console.log('Success!')
             );
-
         }
-    );
+        if(usageInfo) {
+            fs.appendFile(`README.md`, `- [Usage](#usage)\n`, (err) =>
+                err ? console.log(err) : console.log('Success!')
+            );
+        }
+        if(license !== 'None') {
+            fs.appendFile(`README.md`, `- [License](#license)\n`, (err) =>
+                err ? console.log(err) : console.log('Success!')
+            );
+        }
+        if(data.contributing.trim()) {
+            fs.appendFile(`README.md`, `- [Contributing](#contributing)\n`, (err) =>
+                err ? console.log(err) : console.log('Success!')
+            );
+        }
+        if(data.test.trim()) {
+            fs.appendFile(`README.md`, `- [Tests](#tests)\n`, (err) =>
+                err ? console.log(err) : console.log('Success!')
+            );
+        }
+        if(data.github.trim() || data.email.trim()) {
+            fs.appendFile(`README.md`, `- [Questions](#questions)\n`, (err) =>
+                err ? console.log(err) : console.log('Success!')
+            );
+        }
+        fs.appendFile('README.md', `\n\n`, (err) => 
+            err ? console.log(err) : console.log('Success!')
+        );
     if (installation) {
         fs.appendFile(`README.md`, `## Installation\n${installation}\n\n`, (err) =>
             err ? console.log(err) : console.log('Added installation!')
@@ -161,42 +158,6 @@ const generateMarkdown = (data) => {
             fs.appendFile(`README.md`, `\nPlease direct any questions to my email: [${email}](mailto:${email}).\n`, (err) => err ? console.log(err) : console.log('Added email!'));
         }
     };
-}
-
-const generateTableOfContents = (data) => {
-    if(data.installation.trim()) {
-        fs.appendFile(`README.md`, `- [Installation](#installation)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    if(data.usageInfo.trim()) {
-        fs.appendFile(`README.md`, `- [Usage](#usage)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    if(data.license !== 'None') {
-        fs.appendFile(`README.md`, `- [License](#license)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    if(data.contributing.trim()) {
-        fs.appendFile(`README.md`, `- [Contributing](#contributing)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    if(data.test.trim()) {
-        fs.appendFile(`README.md`, `- [Tests](#tests)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    if(data.github.trim() || data.email.trim()) {
-        fs.appendFile(`README.md`, `- [Questions](#questions)\n`, (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    }
-    fs.appendFile('README.md', `\n\n`, (err) => 
-        err ? console.log(err) : console.log('Success!')
-    );
 }
 
 const generateLicense = (license, badge) => {
