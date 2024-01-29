@@ -1,19 +1,53 @@
-# Boudraa-README-Generator
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Currency converter
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 
 ## Description
-This is a README generator. It genertes a professional README that contains a description of the project, table of contents, installation instructions, contribution guidelines, usage information, test instructions, and contact info for directing questions. It will also automatically add the badge for a license of your choosing.
+Changes money into other money
+
 
 ## Table of Contents
+
+- [Installation](#installation)
+
+- [Usage](#usage)
+
 - [License](#license)
+
+- [Contributing](#contributing)
+
+- [Tests](#tests)
+
 - [Questions](#questions)
 
 
+
+## Installation
+Just download it
+
+
+## Usage
+Just use it
+
+
 ## License
-This project is licensed under the terms of the MIT License.
+This project is licensed under the terms of the GNU GPL v3 License.
+
+
+## Contributing
+No contributions
+
+
+## Tests
+No tests
+
 
 ## Questions
+
 GitHub: https://github.com/adamboudruh.
 
 Please direct any questions to my email: [adamboudraa@gmail.com](mailto:adamboudraa@gmail.com).
+
+    
